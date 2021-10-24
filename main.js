@@ -10,7 +10,7 @@ let trayIcon;
 
 const gotTheLock = app.requestSingleInstanceLock()
 
-function processError(err) {
+function processError (err) {
     if (server !== undefined) {
         server.generateAndSendErrorReport(err);
     } else {
@@ -173,7 +173,7 @@ if (!gotTheLock) {
             });
         }
     });
-
+    
     // Listen for web contents being created
     app.on('web-contents-created', (e, contents) => {
         if (contents.getType() == 'window') {
